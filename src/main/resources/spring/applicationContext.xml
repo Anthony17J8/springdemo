@@ -37,4 +37,15 @@
 
     </bean>
 
+    <bean id="randomFortuneService"
+          class="kiselev.springdemo.RandomFortuneService">
+        <constructor-arg name="max" value="${rand.max}"/>
+        <constructor-arg name="min" value="${rand.min}"/>
+        <property name="fortunesArray" value="${rand.arr}"/>
+    </bean>
+
+    <bean id="myFootballCoach" class="kiselev.springdemo.FootballCoach">
+        <constructor-arg name="service" ref="randomFortuneService"/>
+    </bean>
+
 </beans>

@@ -2,6 +2,12 @@ package kiselev.springdemo;
 
 public class FootballCoach implements Coach {
 
+    private FortuneService service;
+
+    public FootballCoach(FortuneService service) {
+        this.service = service;
+    }
+
     @Override
     public String getDailyWorkout() {
         return "Practice your penalty kicks";
@@ -9,6 +15,6 @@ public class FootballCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return null;
+        return service.getFortune();
     }
 }
