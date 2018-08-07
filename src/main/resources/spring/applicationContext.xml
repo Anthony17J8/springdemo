@@ -6,7 +6,7 @@
 
     <!-- Define your beans here -->
 
-    <!--define the dependency-->
+    <!-- define the dependency -->
     <bean id="myFortuneService"
           class="kiselev.springdemo.HappyFortuneService">
 
@@ -15,20 +15,20 @@
     <bean id="myCoach"
           class="kiselev.springdemo.TrackCoach">
 
-        <!--set up constructor injection-->
+        <!-- set up constructor injection -->
         <constructor-arg ref="myFortuneService"/>
     </bean>
 
     <bean id="myCricketCoach"
           class="kiselev.springdemo.CricketCoach">
 
-        <!--set up setter injection-->
+        <!-- set up setter injection -->
         <property name="fortuneService" ref="myFortuneService"/>
+
+        <!--inject literal values-->
+        <property name="emailAddress" value="thebestcoach@gmail.com"/>
+        <property name="team" value="Sunrisers Hyderabad"/>
+
     </bean>
 
 </beans>
-
-
-
-
-
