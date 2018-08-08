@@ -8,7 +8,7 @@ public class XmlInjectionApp {
 
         // load the spring configuration file
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("spring//applicationContext.xml");
+                new ClassPathXmlApplicationContext("spring/applicationContext.xml");
         // retrieve bean from spring container
         FootballCoach theCoach = context.getBean("myFootballCoach", FootballCoach.class);
 

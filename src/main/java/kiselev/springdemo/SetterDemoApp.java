@@ -8,7 +8,7 @@ public class SetterDemoApp {
 
         // load the spring configuration file
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("spring//applicationContext.xml");
+                new ClassPathXmlApplicationContext("spring/applicationContext.xml");
         // retrieve bean from spring container
         CricketCoach theCoach = context.getBean("myCricketCoach", CricketCoach.class);
 
