@@ -14,9 +14,8 @@ public class BeanScopeDemoApp {
         Coach theCoach = context.getBean("myCoach", Coach.class);
         Coach alphaCoach = context.getBean("myCoach", Coach.class);
 
-        FootballCoach myFootballCoach = context.getBean("footballCoach", FootballCoach.class);
-        FootballCoach alphaFootballCoach = context.getBean("footballCoach", FootballCoach.class);
-        
+        Coach myFootballCoach = context.getBean("footballCoach", Coach.class);
+        Coach alphaFootballCoach = context.getBean("footballCoach", Coach.class);
 
         //check if they are the same
         boolean result = theCoach == alphaCoach;
@@ -28,12 +27,12 @@ public class BeanScopeDemoApp {
         System.out.println("\nMemory location for theCoach: " + theCoach);
 
         System.out.println("\nMemory location for alphaCoach: " + alphaCoach + "\n");
-        
+
         System.out.println("\nPointing to the same object: " + checkRef);
 
         System.out.println("\nMemory location for myFootballCoach: " + myFootballCoach);
 
-        System.out.println("\nMemory location for alphaFootballCoach: " + alphaFootballCoach + "\n");
+        System.out.println("\nMemory location for alphaCoach: " + alphaFootballCoach + "\n");
 
         //close context
         context.close();
