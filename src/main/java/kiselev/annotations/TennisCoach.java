@@ -8,9 +8,23 @@ public class TennisCoach implements Coach {
 
     private FortuneService fortuneService;
 
+    // define a default constructor
+    public TennisCoach() {
+        System.out.println("TennisCoach: inside default constructor");
+    }
+
+    /*
     //docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-autowired-annotation
     @Autowired
     public TennisCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+    */
+
+    //define a setter method
+    @Autowired
+    public void setFortuneService(FortuneService fortuneService) {
+        System.out.println("TennisCoach: inside setter method setFortuneService()");
         this.fortuneService = fortuneService;
     }
 
