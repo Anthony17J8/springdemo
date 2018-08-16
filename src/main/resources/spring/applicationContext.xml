@@ -45,7 +45,7 @@
     </bean>
 
     <bean id="myFootballCoach" class="kiselev.springdemo.FootballCoach">
-        <constructor-arg name="service" ref="randomFortuneServiceDemo"/>
+        <constructor-arg ref="randomFortuneServiceDemo"/>
     </bean>
 
 </beans>

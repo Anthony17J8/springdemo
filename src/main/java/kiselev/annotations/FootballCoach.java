@@ -1,9 +1,19 @@
 package kiselev.annotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class FootballCoach implements Coach {
+
+    private FortuneService fortuneService;
+
+    @Autowired
+    @Qualifier("fileFortuneService")
+    public void setFortuneService(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
 
     @Override
     public String getDailyWorkout() {
@@ -12,6 +22,6 @@ public class FootballCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return "You won a ball";
+        return fortuneService.getFortune();
     }
 }

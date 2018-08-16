@@ -20,6 +20,7 @@ public class AnnotationDemoApp {
 
         // call method to get the daily fortune
         System.out.println(theCoach.getDailyFortune());
+        System.out.println("FootballCoach: " + theFootballCoach.getDailyFortune());
 
         // call method to get team name
         System.out.println(theCoach.getTeam());
