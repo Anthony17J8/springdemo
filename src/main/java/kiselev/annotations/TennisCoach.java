@@ -2,10 +2,17 @@ package kiselev.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
+
+    @Value("${foo.email}")
+    private String emailAddress;
+
+    @Value("${foo.team}")
+    private String team;
 
     @Autowired
     @Qualifier("randomFortuneService")
@@ -39,5 +46,13 @@ public class TennisCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return fortuneService.getFortune();
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public String getTeam() {
+        return team;
     }
 }
