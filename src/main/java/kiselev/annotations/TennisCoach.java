@@ -3,11 +3,12 @@ package kiselev.annotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
 
     @Value("${foo.email}")
@@ -23,6 +24,18 @@ public class TennisCoach implements Coach {
     // define a default constructor
     public TennisCoach() {
         System.out.println("TennisCoach: inside default constructor");
+    }
+
+    // define my init method
+    @PostConstruct
+    public void doMyStartupStuff() {
+        System.out.println(">> TennisCoach: inside of doMyStartupStuff()");
+    }
+
+    // define my destroy method
+    @PreDestroy
+    public void doMyCleanupStuff() {
+        System.out.println(">> TennisCoach: inside of doMyCleanupStuff()");
     }
 
     /*
